@@ -103,8 +103,13 @@ body {
         margin-bottom: 0.5rem;
     }
     
+    .timer-grid {
+        margin-bottom: 0.5rem; /* Tighten gap on mobile */
+    }
+    
     .app-footer {
-        margin-top: 2rem; /* Pull footer higher */
+        margin-top: 0; /* Remove extra space on mobile */
+        padding-top: 0.5rem; /* Minimal top padding */
     }
 }
 
@@ -166,7 +171,7 @@ body {
 .announcement-text strong {
     font-family: 'Space Grotesk', sans-serif;
     color: var(--popvai-yellow);
-    font-size: 1.9rem;
+    font-size: 2.3rem;
     display: block;
     margin-top: var(--spacing-xs);
     text-shadow: 0 0 20px rgba(255, 214, 10, 0.3);
@@ -178,7 +183,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-sm);
     width: 100%;
-    margin-bottom: var(--spacing-md); /* Reduced from lg to pull content up */
+    margin-bottom: var(--spacing-sm); /* Reduced from md to tighten gap to footer */
 }
 
 .timer-item {
@@ -398,13 +403,12 @@ body {
 
 /* Footer */
 .app-footer {
-    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-xs); /* Reduced top and bottom padding */
-    padding-top: 1rem; /* Reduced top padding to bring footer content higher */
+    padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs); /* Further reduced top padding */
     text-align: center;
     background: transparent;
     position: relative;
     z-index: 2;
-    margin-top: auto; /* Ensure it pushes to the bottom if there is extra space, though flex-grow on main handles this */
+    margin-top: 0; /* Remove auto margin to pull closer */
 }
 
 .footer-text {
