@@ -79,7 +79,7 @@
         const container = document.querySelector('.app-container');
         if (!container) return;
 
-        const particleCount = 40; // Increased stars count
+        const particleCount = 10; // Increased stars count
 
         // Create Top Particles
         for (let i = 0; i < particleCount; i++) {
