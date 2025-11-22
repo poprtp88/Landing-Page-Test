@@ -312,7 +312,7 @@ body {
     
     /* Rich Gold Bar Background with Metallic Gradient */
     background: linear-gradient(135deg, 
-        #F 0%,     /* Bright gold highlight */
+        #FFD700 0%,     /* Bright gold highlight */
         #D4AF37 25%,    /* Rich gold bar color */
         #B8941D 50%,    /* Deeper gold shadow */
         #D4AF37 75%,    /* Rich gold bar color */
