@@ -300,7 +300,7 @@ body {
 .website-link {
     position: relative;
     z-index: 2;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Megazine Poster', serif;
     font-weight: 700;
     font-size: 1.4rem;
     letter-spacing: 3px;
@@ -330,7 +330,7 @@ body {
         inset 0 2px 15px rgba(255, 255, 255, 0.4), /* Top metallic shine */
         inset 0 -2px 15px rgba(139, 69, 19, 0.3);  /* Bottom shadow depth */
 
-    color: #ff0000; /* High-contrast white text for the luminous gold */
+    color: #ff1313; /* High-contrast white text for the luminous gold */
     text-shadow: 
         0 -1px 2px rgba(139, 69, 19, 0.5);     /* Bottom shadow */
     
