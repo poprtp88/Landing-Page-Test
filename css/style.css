@@ -94,6 +94,37 @@ body {
         box-shadow: none;
         overflow-y: visible; /* Allow body scroll */
     }
+
+    /* Tighter Mobile Spacing */
+    .logo {
+        margin-top: -35px;
+        padding-top: 40px;
+        max-width: 220px; /* Slightly smaller logo for mobile */
+    }
+
+    .link-wrapper {
+        margin-top: 10px; /* Reduced from 20px */
+        padding: 5px; /* Reduced from 10px */
+    }
+
+    .announcement-text {
+        margin-bottom: 0.5rem; /* Even tighter */
+        font-size: 1.4rem; /* Slightly smaller text */
+    }
+
+    .announcement-text strong {
+        font-size: 1.6rem;
+        margin-top: 0.2rem;
+    }
+
+    .app-footer {
+        margin-top: -50px; /* Pull footer higher up on mobile */
+        padding-top: 0; /* Remove top padding to bring content closer */
+    }
+    
+    .timer-grid {
+        margin-bottom: 1rem; /* Reduce space below timer */
+    }
 }
 
 /* Header */
@@ -153,7 +184,7 @@ body {
 .announcement-text strong {
     font-family: 'Space Grotesk', sans-serif;
     color: var(--popvai-yellow);
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     display: block;
     margin-top: var(--spacing-xs);
     text-shadow: 0 0 20px rgba(255, 214, 10, 0.3);
