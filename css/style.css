@@ -98,7 +98,7 @@ body {
 
 /* Header */
 .app-header {
-    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-xs); /* Drastically reduced top/bottom padding */
     text-align: center;
     flex-shrink: 0;
     position: relative;
@@ -110,7 +110,7 @@ body {
     height: auto;
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); /* Logo Glow */
     animation: float 6s ease-in-out infinite;
-    margin-top: -35px;
+    margin-top: -35; /* Reset negative margin */
 }
 
 @keyframes float {
@@ -145,7 +145,7 @@ body {
 .announcement-text {
     font-size: 1.6rem;
     color: var(--text-white);
-    margin-bottom: var(--spacing-md); /* Reduced from xl */
+    margin-bottom: var(--spacing-sm); /* Reduced from md */
     font-weight: 400;
 }
 
@@ -164,7 +164,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-sm);
     width: 100%;
-    margin-bottom: var(--spacing-lg); /* Reduced from xl to pull content up */
+    margin-bottom: var(--spacing-md); /* Reduced from lg to pull content up */
 }
 
 .timer-item {
@@ -212,8 +212,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px; /* Increased margin to push down further */
-    padding: 20px;
+    margin-top: 20px; /* Reduced from 60px */
+    padding: 10px; /* Reduced from 20px */
 }
 
 /* Removed .link-bg as requested */
