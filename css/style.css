@@ -211,8 +211,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Reduced from 60px */
-    margin-bottom: 0px; /* Add bottom margin to control spacing to text below */
+    margin-top: 10px; /* Reduced from 60px */
+    margin-bottom: -10px; /* Add bottom margin to control spacing to text below */
     padding: -0px; /* Reduced from 20px */
 }
 
