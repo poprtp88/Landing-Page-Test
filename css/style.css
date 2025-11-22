@@ -98,8 +98,8 @@ body {
     /* Tighter Mobile Spacing */
     .link-wrapper {
         margin-top: 10px; /* Even closer to logo */
-        margin-bottom: 5px; /* Tight gap to text below */
-        padding: 5px;
+        margin-bottom: 30px; /* Tight gap to text below */
+        padding-bottom: 15px;
     }
     
     .announcement-text {
@@ -231,8 +231,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 20px; /* Reduced from 60px */
-    margin-bottom: 10px; /* Add bottom margin to control spacing to text below */
-    padding: 10px; /* Reduced from 20px */
+    margin-bottom: 0px; /* Add bottom margin to control spacing to text below */
+    padding: -0px; /* Reduced from 20px */
 }
 
 /* Removed .link-bg as requested */
