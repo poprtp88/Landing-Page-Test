@@ -330,7 +330,7 @@ body {
         inset 0 2px 15px rgba(255, 255, 255, 0.4), /* Top metallic shine */
         inset 0 -2px 15px rgba(139, 69, 19, 0.3);  /* Bottom shadow depth */
 
-    color: #b92121; /* High-contrast white text for the luminous gold */
+    color: #ff0000; /* High-contrast white text for the luminous gold */
     text-shadow: 
         0 -1px 2px rgba(139, 69, 19, 0.5);     /* Bottom shadow */
     
