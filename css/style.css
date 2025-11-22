@@ -1,3 +1,8 @@
+/*
+ * style.css
+ * Defines the POPVAI landing experience, covering layout, typography,
+ * and the premium animated accents that elevate the brand reveal.
+ */
 :root {
     /* Brand Colors */
     --popvai-purple: #7B2CBF; /* Vibrant Purple */
@@ -234,7 +239,7 @@ body {
     font-weight: 600;
 }
 
-    /* Link Wrapper - Centered Container */
+/* Link Wrapper - Centered Container */
 .link-wrapper {
     position: relative;
     display: flex;
@@ -243,6 +248,41 @@ body {
     margin-top: 0; /* No top margin */
     margin-bottom: 0; /* No bottom margin */
     padding: 0; /* No padding */
+    isolation: isolate; /* Keep halo layers beneath the button */
+}
+
+/* Radiating halo layers that emanate from the button */
+.link-wrapper::before,
+.link-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle,
+        rgba(255, 215, 0, 0.45) 0%,
+        rgba(212, 175, 55, 0.25) 35%,
+        rgba(255, 140, 0, 0.15) 55%,
+        rgba(255, 140, 0, 0) 80%
+    );
+    filter: blur(12px);
+}
+
+.link-wrapper::before {
+    width: 220%;
+    height: 220%;
+    transform: translate(-50%, -50%) scale(0.7);
+    animation: radiate-pulse 4s ease-out infinite;
+}
+
+.link-wrapper::after {
+    width: 320%;
+    height: 320%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.6;
+    animation: radiate-pulse-soft 6s ease-out infinite;
 }
 
 /* Mobile specific overrides */
@@ -256,7 +296,7 @@ body {
 
 /* Removed .link-bg as requested */
 
-/* High-Tech Holographic Pill */
+/* High-Tech Gold Bar Button with Shine Effect */
 .website-link {
     position: relative;
     z-index: 2;
@@ -270,33 +310,39 @@ body {
     padding: 1.2rem 3rem;
     border-radius: 50px;
     
-    /* Glassmorphism Background - Gradient Yellow-Purple */
+    /* Rich Gold Bar Background with Metallic Gradient */
     background: linear-gradient(135deg, 
-        rgba(255, 215, 0, 0.95) 0%,  /* Almost solid gold start */
-        rgba(123, 44, 191, 0.85) 100% /* High opacity purple end */
+        #FFD700 0%,     /* Bright gold highlight */
+        #D4AF37 25%,    /* Rich gold bar color */
+        #B8941D 50%,    /* Deeper gold shadow */
+        #D4AF37 75%,    /* Rich gold bar color */
+        #FFD700 100%    /* Bright gold highlight */
     );
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-size: 200% 200%;
     
-    /* Glowing Tech Border - Toned Down */
-    border: 2px solid rgba(255, 215, 0, 0.6); /* More transparent border */
-    /* Toned Down Aura */
+    /* Gold Border with Shine */
+    border: 3px solid #ffe600; /* Darker gold/orange border */
+    
+    /* Radiant Gold Glow and Metallic Depth */
     box-shadow: 
-        0 0 15px rgba(255, 215, 0, 0.3), /* Reduced primary aura */
-        inset 0 0 10px rgba(255, 215, 0, 0.1); /* Reduced inner glow */
-        
-    /* Text Gradient Effect Removed for White Text */
-    color: var(--text-white);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Added subtle shadow for legibility against yellow */
-    /* background: none; REMOVED - causing issue */
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    -webkit-text-fill-color: initial;
-    text-fill-color: initial;
+        0 0 30px rgba(212, 175, 55, 0.8),        /* Primary golden aura */
+        0 0 60px rgba(255, 215, 0, 0.6),         /* Extended golden glow */
+        inset 0 2px 15px rgba(255, 255, 255, 0.4), /* Top metallic shine */
+        inset 0 -2px 15px rgba(139, 69, 19, 0.3);  /* Bottom shadow depth */
+
+    color: #ffffff; /* High-contrast white text for the luminous gold */
+    text-shadow: 
+        0 1px 2px rgba(255, 255, 255, 0.8),    /* Top highlight */
+        0 -1px 2px rgba(139, 69, 19, 0.5);     /* Bottom shadow */
     
-    animation: float-link 4s ease-in-out infinite, text-expand-deflate 2s ease-in-out infinite;
+    /* Animations: Float + Expand/Deflate + Background Shimmer */
+    animation: 
+        float-link 4s ease-in-out infinite, 
+        text-expand-deflate 2s ease-in-out infinite,
+        gold-shimmer 3s linear infinite;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block; /* Required for transform to work on text */
+    overflow: hidden; /* Clip shine effect */
 }
 
 @keyframes text-expand-deflate {
@@ -308,67 +354,131 @@ body {
     }
 }
 
-/* Animated Border Shine using Pseudo-element */
+/* Sweeping Shine Effect using Pseudo-element */
 .website-link::before {
     content: '';
     position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    border-radius: 50px;
-    /* Aura Pulse Animation Layer */
-    background: transparent;
-    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.2); /* Toned down shadow */
-    z-index: -1;
-    opacity: 0.8; 
-    animation: aura-pulse 3s ease-in-out infinite; /* Slower pulse */
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 20%,
+        rgba(255, 255, 255, 0.8) 50%,  /* Bright white shine in center */
+        rgba(255, 255, 255, 0.1) 80%,
+        transparent 100%
+    );
+    transform: skewX(-20deg); /* Diagonal sweep effect */
+    z-index: 0; /* Behind text content */
+    mix-blend-mode: overlay; /* Blend with background, preserve text */
+    animation: shine-sweep 4s ease-in-out infinite;
 }
 
-@keyframes aura-pulse {
+/* Gold Background Shimmer Animation */
+@keyframes gold-shimmer {
     0% {
-        box-shadow: 0 0 15px 2px rgba(255, 215, 0, 0.2);
-        opacity: 0.5;
+        background-position: 0% 50%;
     }
     50% {
-        box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.4); /* Toned down max pulse */
-        opacity: 0.8;
+        background-position: 100% 50%;
     }
     100% {
-        box-shadow: 0 0 15px 2px rgba(255, 215, 0, 0.2);
-        opacity: 0.5;
+        background-position: 0% 50%;
+    }
+}
+
+/* Sweeping Shine Animation */
+@keyframes shine-sweep {
+    0% {
+        left: -150%;
+    }
+    50% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
     }
 }
 
 .website-link:hover {
-    transform: scale(1.05) translateY(-5px);
+    transform: scale(1.08) translateY(-8px);
     box-shadow: 
-        0 0 30px rgba(255, 215, 0, 0.5), /* Toned down hover glow */
-        inset 0 0 20px rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 1); /* Gold border on hover instead of white */
+        0 0 50px rgba(212, 175, 55, 1),          /* Intense golden aura */
+        0 0 80px rgba(255, 215, 0, 0.8),         /* Extended bright glow */
+        0 10px 30px rgba(212, 175, 55, 0.6),     /* Drop shadow */
+        inset 0 2px 20px rgba(255, 255, 255, 0.6), /* Enhanced top shine */
+        inset 0 -2px 20px rgba(139, 69, 19, 0.4);  /* Enhanced bottom depth */
+    border-color: #FFD700; /* Bright gold border on hover */
+    filter: brightness(1.2); /* Brighten the gold on hover */
 }
 
-/* Removed unused border-flow animation */
+/* Secondary Shine Layer for Extra Sparkle */
+.website-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    z-index: 0; /* Behind text content */
+    mix-blend-mode: overlay; /* Blend with background, preserve text */
+    animation: sparkle-sweep 6s ease-in-out infinite;
+    animation-delay: 2s; /* Offset from main shine */
+}
+
+@keyframes sparkle-sweep {
+    0% {
+        left: -100%;
+    }
+    30% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* Radiating halo pulses */
+@keyframes radiate-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0.6;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.15;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0;
+    }
+}
+
+@keyframes radiate-pulse-soft {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.45;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.6);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+}
 
 @keyframes float-link {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
-}
-
-.website-link:hover {
-    filter: drop-shadow(0 0 15px rgba(255, 214, 10, 0.8));
-}
-
-@keyframes shine-pulse {
-    0% {
-        background-position: 100% center; /* Starts Right */
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.15); 
-        text-shadow: 0 0 30px rgba(255, 214, 10, 0.6);
-    }
-    100% {
-        background-position: -100% center; /* Ends Left */
-        transform: scale(1);
-    }
 }
 
 /* Particles (Stars) */
