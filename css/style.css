@@ -312,11 +312,8 @@ body {
     
     /* Rich Gold Bar Background with Metallic Gradient */
     background: linear-gradient(135deg, 
-        #FFD700 0%,     /* Bright gold highlight */
-        #D4AF37 25%,    /* Rich gold bar color */
-        #B8941D 50%,    /* Deeper gold shadow */
-        #D4AF37 75%,    /* Rich gold bar color */
-        #FFD700 100%    /* Bright gold highlight */
+        #ffffff 0%,     /* Bright gold highlight */
+        #ffffff 100%    /* Bright gold highlight */
     );
     background-size: 200% 200%;
     
@@ -330,10 +327,9 @@ body {
         inset 0 2px 15px rgba(255, 255, 255, 0.4), /* Top metallic shine */
         inset 0 -2px 15px rgba(139, 69, 19, 0.3);  /* Bottom shadow depth */
 
-    color: #ffffff; /* High-contrast white text for the luminous gold */
+    color: #ecde16ea; /* High-contrast white text for the luminous gold */
     text-shadow: 
-        0 1px 2px rgba(255, 255, 255, 0.8),    /* Top highlight */
-        0 -1px 2px rgba(139, 69, 19, 0.5);     /* Bottom shadow */
+        0 -1px 2px rgba(192, 87, 12, 0.5);     /* Bottom shadow */
     
     /* Animations: Float + Expand/Deflate + Background Shimmer */
     animation: 
