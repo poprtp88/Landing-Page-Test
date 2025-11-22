@@ -131,7 +131,6 @@ body {
     padding-right: 20px;
     position: relative;
     z-index: 2;
-    margin-bottom: -25px;
 }
 
 .title {
@@ -381,7 +380,7 @@ body {
     background: transparent;
     position: relative;
     z-index: 2;
-    margin-top: auto; /* Ensure it pushes to the bottom if there is extra space, though flex-grow on main handles this */
+    margin-top: -35px; /* Ensure it pushes to the bottom if there is extra space, though flex-grow on main handles this */
 }
 
 .footer-text {
