@@ -82,13 +82,11 @@ body {
     .phone-wrapper {
         padding: 0;
         min-height: 100vh;
-        height: auto; /* Allow scrolling */
         align-items: flex-start;
     }
     .app-container {
         max-width: 100%;
         min-height: 100vh;
-        height: auto; /* Allow content to dictate height */
         border-radius: 0;
         box-shadow: none;
         overflow-y: visible; /* Allow body scroll */
