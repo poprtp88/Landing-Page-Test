@@ -230,8 +230,8 @@ body {
     
     /* Glassmorphism Background - Gradient Yellow-Purple */
     background: linear-gradient(135deg, 
-        rgba(252, 235, 6, 0.3) 50%, 
-        rgba(123, 44, 191, 0.3) 50%
+        rgba(255, 215, 0, 0.95) 0%,  /* Almost solid gold start */
+        rgba(123, 44, 191, 0.85) 100% /* High opacity purple end */
     );
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -245,7 +245,8 @@ body {
         
     /* Text Gradient Effect Removed for White Text */
     color: var(--text-white);
-    background: none;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Added subtle shadow for legibility against yellow */
+    /* background: none; REMOVED - causing issue */
     -webkit-background-clip: initial;
     background-clip: initial;
     -webkit-text-fill-color: initial;
